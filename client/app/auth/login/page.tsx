@@ -7,7 +7,7 @@ import { Input } from "@/components/ui/input"
 import { Label } from "@/components/ui/label"
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card"
 import { Alert, AlertDescription } from "@/components/ui/alert"
-import { Calendar, AlertCircle } from "lucide-react"
+import { Calendar, AlertCircle, Stethoscope } from "lucide-react"
 import { login } from "@/lib/auth"
 import type { UserRole } from "@/lib/types"
 
@@ -48,20 +48,20 @@ export default function LoginPage() {
     }
 
     return (
-        <div className="min-h-screen flex items-center justify-center bg-background px-4 py-8">
+
+        <div className="flex items-center justify-center min-h-screen bg-[url('/clinic-app-login-background.jpg')] bg-center bg-cover bg-no-repeat">
             <div className="w-full max-w-md">
 
                 <div className="text-center mb-8">
                     <div className="inline-flex items-center justify-center w-16 h-16 rounded-full bg-primary/10 mb-4">
-                        <Calendar className="h-8 w-8 text-primary" />
+                        <Stethoscope className="h-8 w-8 text-primary" />
                     </div>
-                    <h1 className="text-3xl font-semibold mb-2">Welcome Back</h1>
-                    <p className="text-muted-foreground">Sign in to access your clinic account</p>
+                    <h1 className="text-4xl font-semibold mb-2">Welcome</h1>
                 </div>
 
                 <Card>
                     <CardHeader>
-                        <CardTitle>Sign In</CardTitle>
+                        <CardTitle className="text-lg font-semibold flex items-center justify-center">Sign in to Access Your Clinic Account</CardTitle>
                     </CardHeader>
                     <form onSubmit={handleSubmit}>
                         <CardContent className="space-y-4">
