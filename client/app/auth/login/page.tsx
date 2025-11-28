@@ -59,12 +59,12 @@ export default function LoginPage() {
                     <h1 className="text-4xl font-semibold mb-2">Welcome</h1>
                 </div>
 
-                <Card>
+                <Card className= "flex justify-center shadow-md min-h-[550px] min-w-[750px]-center">
                     <CardHeader>
-                        <CardTitle className="text-lg font-semibold flex items-center justify-center">Sign in to Access Your Clinic Account</CardTitle>
+                        <CardTitle className="text-[21px] font-semibold flex items-center justify-center">Sign in to Access Your Clinic Account</CardTitle>
                     </CardHeader>
                     <form onSubmit={handleSubmit}>
-                        <CardContent className="space-y-4">
+                        <CardContent className="flex flex-col justify-between gap-4">
                             {error && (
                                 <Alert variant="destructive">
                                     <AlertCircle className="h-4 w-4" />
@@ -72,9 +72,9 @@ export default function LoginPage() {
                                 </Alert>
                             )}
 
-                            <div className="space-y-2">
-                                <Label htmlFor="email">Email</Label>
-                                <Input
+                            <div className="flex-1 space-y-4">
+                                <Label className="text-2xl font-medium" htmlFor="email">Email</Label>
+                                <Input className="h-16 !text-2xl placeholder:text-2xl"
                                     id="email"
                                     type="email"
                                     placeholder="you@example.com"
@@ -85,30 +85,29 @@ export default function LoginPage() {
                                 />
                             </div>
 
-                            <div className="space-y-2">
+                            <div className="flex-1 space-y-4">
                                 <div className="flex items-center justify-between">
-                                    <Label htmlFor="password">Password</Label>
+                                    <Label className="text-2xl font-medium"htmlFor="password">Password</Label>
                                 </div>
-                <Input
+                <Input className="h-16 !text-2xl placeholder:text-2xl"
                     id="password"
                     type="password"
-                    placeholder="Enter your password"
                     value={password}
                                     onChange={(e) => setPassword(e.target.value)}
                                     disabled={isLoading}
                                     required
                                 />
                             </div>
-                            <div className="mt-4">
+                            <div className="mt-4 py-2">
                                 <Button
                                     type="submit"
-                                    className="w-full"
+                                    className="text-2xl h-14 w-full"
                                     disabled={isLoading}
                                 >
                             {isLoading ? "Signing in..." : "Sign In"}
                         </Button>
                     </div>
-                    <div className="text-sm text-muted-foreground text-center">
+                    <div className="text-xl text-muted-foreground text-center">
                       New patient? <a className="text-primary hover:underline" href="/auth/signup">Create an account</a>
                     </div>
                 </CardContent>
